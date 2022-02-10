@@ -2,7 +2,6 @@
    
     // Database connection
     include('config/db.php');
-
     global $wrongPwdErr, $accountNotExistErr, $emailPwdErr, $verificationRequiredErr, $email_empty_err, $pass_empty_err;
 
     if(isset($_POST['login'])) {
@@ -61,6 +60,8 @@
                        $_SESSION['email'] = $email;
                        $_SESSION['mobilenumber'] = $mobilenumber;
                        $_SESSION['token'] = $token;
+                       $_SESSION['login'] = true;
+                       $_SESSION['timestamp'] = time();
 
                     } else {
                         $emailPwdErr = '<div class="alert alert-danger">

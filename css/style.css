@@ -16,17 +16,16 @@ html,
 }
 
 .navbar {
-  background: #1833FF !important;
   width: 100%;
 }
 
 .btn-outline-primary {
-  border-color: #1833FF;
-  color: #1833FF;
+  border-color: #2C3333;
+  color: #2C3333;
 }
 
 .btn-outline-primary:hover {
-  background-color: #1833FF;
+  background-color: #2C3333;
   color: #ffffff;
 }
 
@@ -48,7 +47,7 @@ html,
 }
 
 .vertical-center .form-control:focus {
-  border-color: #2554FF;
+  border-color: #2C3333;
   box-shadow: none;
 }
 

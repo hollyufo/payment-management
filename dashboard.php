@@ -1,4 +1,12 @@
-<!-- Coding by CodingLab | www.codinglabweb.com -->
+<?php
+    include('config/db.php');
+    //if(!$_SESSION['login']){
+      //  header("location:index.php");
+       // die;
+    // }
+        include './controllers/time.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
     
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -19,12 +27,12 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="logo.png" alt="">
+                    <img src="./img/logo.jpeg" alt="">
                 </span>
 
                 <div class="text logo-text">
-                    <span class="name">Codinglab</span>
-                    <span class="profession">Web developer</span>
+                    <span class="name">virtualprovision</span>
+                    <span class="profession">team</span>
                 </div>
             </div>
 
@@ -114,7 +122,7 @@
         <div class="text">Dashboard Sidebar</div>
     </section>
 
-    <script src="script.js"></script>
+    <script src="./js/script.js"></script>
 
 </body>
 </html>
