@@ -13,14 +13,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="./css/dashboard.css">
     
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     
-    <title>Dashboard Sidebar Menu</title> 
+    <title>Dashboard Sidebar</title> 
 </head>
 <body>
     <nav class="sidebar close">
@@ -119,7 +118,33 @@
     </nav>
 
     <section class="home">
-        <div class="text">Dashboard Sidebar</div>
+        <div class="text">Dashboard</div>
+        <div class="container">
+            <div class="card">
+               <div class="text12">
+                   <h3 class="text-center">employee</h3>
+                   <p class="ctext">Total : 12</p>
+               </div>
+            </div>
+            <div class="card">
+               <div class="text12">
+                   <h3 class="text-center">Departement</h3>
+                   <p class="ctext">Total : 12</p>
+               </div>
+            </div>
+            <div class="card">
+               <div class="text12">
+                   <h3 class="text-center">personal spent</h3>
+                   <p class="ctext">Total : 12</p>
+               </div>
+            </div>
+            <div class="card">
+               <div class="text12">
+                   <h3 class="text-center">employee </h3>
+                   <p class="ctext">Payment Total : 12</p>
+               </div>
+            </div>
+        </div>
     </section>
 
     <script src="./js/script.js"></script>

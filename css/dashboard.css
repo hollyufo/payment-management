@@ -307,3 +307,32 @@ body.dark .switch::before{
 body.dark .home .text{
     color: var(--text-color);
 }
+.container{
+    padding-left: 15px;
+    display: flex;
+    row-gap: 20px;
+    column-gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+/* cards */
+.card {
+    border-radius: 4px;
+    border: 1px solid #EFEFEF;
+    background-color: #FDEFF4;
+    padding: 10px;
+    margin:10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    min-width: 200px;
+    max-width: 250px;
+    width: 22%;
+    height: 100px;
+    
+}
+.text12{
+    display: flex;
+    flex-direction: column;
+}
+.ctext{
+    align-self: flex-end;
+}
