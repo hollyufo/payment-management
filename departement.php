@@ -1,9 +1,9 @@
 <?php
     include('config/db.php');
-    if(!$_SESSION['login']){
-        header("location:index.php");
-        die;
-    }
+    //if(!$_SESSION['login']){
+      //  header("location:index.php");
+       // die;
+    // }
         include './controllers/time.php';
 
 ?>
@@ -19,7 +19,7 @@
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     
-    <title>Dashboard Sidebar</title> 
+    <title>Departement</title> 
 </head>
 <body>
     <nav class="sidebar close">
@@ -55,7 +55,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="./departement.php">
+                        <a href="">
                             <i class='bx bx-bar-chart-alt-2 icon' ></i>
                             <span class="text nav-text">Departement</span>
                         </a>
@@ -94,7 +94,7 @@
 
             <div class="bottom-content">
                 <li class="">
-                    <a href="./logout.php">
+                    <a href="#">
                         <i class='bx bx-log-out icon' ></i>
                         <span class="text nav-text">Logout</span>
                     </a>
@@ -118,32 +118,9 @@
     </nav>
 
     <section class="home">
-        <div class="text">Dashboard</div>
+        <div class="text">Departement</div>
         <div class="container">
-            <div class="card">
-               <div class="text12">
-                   <h3 class="text-center">employee</h3>
-                   <p class="ctext">Total : 12</p>
-               </div>
-            </div>
-            <div class="card">
-               <div class="text12">
-                   <h3 class="text-center">Departement</h3>
-                   <p class="ctext">Total : 12</p>
-               </div>
-            </div>
-            <div class="card">
-               <div class="text12">
-                   <h3 class="text-center">personal spent</h3>
-                   <p class="ctext">Total : 12</p>
-               </div>
-            </div>
-            <div class="card">
-               <div class="text12">
-                   <h3 class="text-center">employee </h3>
-                   <p class="ctext">Payment Total : 12</p>
-               </div>
-            </div>
+         
         </div>
     </section>
 
