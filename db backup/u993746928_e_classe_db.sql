@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Feb 10, 2022 at 01:04 PM
--- Server version: 10.5.12-MariaDB-cll-lve
--- PHP Version: 7.2.34
+-- Host: 127.0.0.1
+-- Generation Time: Feb 14, 2022 at 09:23 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,33 +18,31 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `u993746928_e_classe_db`
+-- Database: `management`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `course`
+-- Table structure for table `employee`
 --
 
-CREATE TABLE `course` (
-  `id` int(11) NOT NULL,
-  `cname` varchar(255) NOT NULL,
-  `creator` varchar(255) DEFAULT NULL,
-  `created` varchar(255) DEFAULT NULL,
-  `duration` varchar(255) DEFAULT NULL,
-  `link` varchar(255) DEFAULT NULL
+CREATE TABLE `employee` (
+  `ID` int(11) NOT NULL,
+  `LastName` varchar(255) NOT NULL,
+  `FirstName` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT 'No Data',
+  `phonenumber` varchar(255) DEFAULT 'NO Data',
+  `departement` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `course`
+-- Dumping data for table `employee`
 --
 
-INSERT INTO `course` (`id`, `cname`, `creator`, `created`, `duration`, `link`) VALUES
-(6, 'Kendall Mclaughlin', 'tudi@mailinator.com', '1972-03-07', '10', 'Anim cum sint hic d'),
-(7, 'Jerome Boyle', 'mazozevi@mailinator.com', '1972-01-02', '90', 'Commodo reiciendis v'),
-(8, 'Kermit Gomez', 'hyjom@mailinator.com', '2019-03-26', '50', 'Facilis qui illo occ'),
-(9, 'Cora Franklin', 'fedyta@mailinator.com', '1997-04-04', '85', 'Facere repellendus ');
+INSERT INTO `employee` (`ID`, `LastName`, `FirstName`, `email`, `phonenumber`, `departement`) VALUES
+(1, 'imrane', 'chaibi', 'chaibi1imran@gmail.com', '0632823950', NULL),
+(2, 'ahmed', 'charaf', 'charaf@gmail.com', '0654768754', NULL);
 
 -- --------------------------------------------------------
 
@@ -60,56 +58,22 @@ CREATE TABLE `forget_password` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `payment_details`
+-- Table structure for table `payroll`
 --
 
-CREATE TABLE `payment_details` (
-  `ID` int(11) NOT NULL,
-  `fName` varchar(255) NOT NULL,
-  `PaymentSchedule` varchar(255) DEFAULT NULL,
-  `BillNumber` varchar(255) DEFAULT NULL,
-  `AmountPaid` varchar(255) DEFAULT NULL,
-  `Blanaceamount` varchar(255) DEFAULT NULL,
-  `tDate` varchar(255) DEFAULT NULL
+CREATE TABLE `payroll` (
+  `payrollID` int(11) NOT NULL,
+  `payrollamount` int(11) NOT NULL,
+  `payrolldate` int(11) NOT NULL,
+  `ID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `payment_details`
+-- Dumping data for table `payroll`
 --
 
-INSERT INTO `payment_details` (`ID`, `fName`, `PaymentSchedule`, `BillNumber`, `AmountPaid`, `Blanaceamount`, `tDate`) VALUES
-(1, 'Mechelle Colon', 'zumuxe@mailinator.com', '671', '92', '5', '1978-07-28'),
-(2, 'Hiram Leach', 'godat@mailinator.com', '964', '73', '81', '1980-08-22'),
-(3, 'Ferdinand Crosby', 'tewexahi@mailinator.com', '102', '83', '11', '2013-01-13'),
-(4, 'imrane', 'matutit@mailinator.com', '490', '58', '26', '1991-11-30'),
-(5, 'Lydia Weeks', 'lytafif@mailinator.com', '41', '790', '10', '1983-11-24');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `students`
---
-
-CREATE TABLE `students` (
-  `ID` int(11) NOT NULL,
-  `fName` varchar(255) DEFAULT NULL,
-  `Email` varchar(255) DEFAULT NULL,
-  `Phone` varchar(255) DEFAULT NULL,
-  `EnrollNumber` varchar(255) DEFAULT NULL,
-  `AdmissionDate` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `students`
---
-
-INSERT INTO `students` (`ID`, `fName`, `Email`, `Phone`, `EnrollNumber`, `AdmissionDate`) VALUES
-(6, 'Winifred Barber', 'zesite@mailinator.com', '+1 (988) 954-1213', 'Et dolor ad eum cons', '17-Jul-1987'),
-(7, 'Kadeem Kelly', 'pykymonezu@mailinator.com', '+1 (493) 976-7877', '29', '1999-08-28'),
-(8, 'Leah Evans', 'xihyfawy@mailinator.com', '+1 (461) 612-5971', '95', '2014-05-10'),
-(9, 'Katell Estes', 'zamubykomo@mailinator.com', '+1 (437) 167-7637', '46', '1990-10-29'),
-(10, 'imran', 'jovagyqow@mailinator.com', '+1 (594) 106-6255', '26', '1972-03-19'),
-(11, 'Jemima Melton', 'goxyfe@mailinator.com', '+1 (131) 743-3571', '6', '2010-01-27');
+INSERT INTO `payroll` (`payrollID`, `payrollamount`, `payrolldate`, `ID`) VALUES
+(1, 200, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -134,36 +98,24 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `mobilenumber`, `password`, `token`, `is_active`, `date_time`) VALUES
-(1, 'imrane', 'chaibi', 'imranchaibi1@gmail.com', '0632823950', '$2y$10$Mcm9e6Q/hbiO5enr47IMgeSKF03R87Ljdyxm20slOcPLoheqyrJf.', '5fb943ab2b34416fd5df62dac158d341', '1', '2022-02-04'),
-(2, 'riad', 'riad', 'riadabdelaziz40@gmail.com', '0618348558', '$2y$10$McTrb3vRHVrvsaYTF/lkEuM3EmLa1w6QLDNZFbhGZooWaQns4oCr.', 'ebfcf3cb89eafb19b8b779c4c69f3aae', '0', '2022-02-04'),
-(7, 'ash', 'sd', 'ash-sd@pm.me', '0694799286', '$2y$10$KB8RRm6QybvjDSGxowBG2..qczQzfd4C5ngq/6I.Pih5AiKxgWvEq', '56d6ebdf0635c31c049c1ac00cb88d3d', '1', '2022-02-04'),
-(8, 'imrane', 'chaibi', 'parey54770@chinamkm.com', '0632823959', '$2y$10$RVoA7ZJlVX47G6Ssz/eUS.8yzp46L0OVjEsSvVLtmwfhX7ebqFLGG', '17e7f1388cf8a5d206e837d9169700cd', '1', '2022-02-04'),
-(9, 'SAM', 'LOOK', 'samlook00@gmail.com', '0680152455', '$2y$10$17XAh4ihQmdUXXcWH6yScetv5cPA7bW4tIFgrmn6hgZER8zQhv4e.', 'e72610c5c90ee5d9717bfcff2ed592cc', '1', '2022-02-04'),
-(10, 'Oussama', 'Elkhaldaoui', 'oussama.elkhaldaoui@gmail.com', '0611848302', '$2y$10$krTFYsa6NAYUwThzERShe.tZxd1WyL/iDN7MqeT82prIh0SJrZxtK', '6bc2d349fb764e42031ee899589bd279', '1', '2022-02-04'),
-(12, 'vpv', 'team', 'vpvteam0@gmail.com', '0632823950', '$2y$10$yS0WtXqrBRGi0Yeqa.O42utOz3eNsN5js4gCNqeDPGQKUC/feNLkC', 'ef568ead8061e36b51bcad295cb75ae4', '1', '2022-02-07'),
-(14, 'nouhaila', 'elaalami', 'nouhailaelaalami286@gmail.com', '0628578248', '$2y$10$RNGFnTXMAUaLECPF7theZOMpKBCPYCzp3ut8BAuXHv7Sh5628C/Om', 'e6daf51f0121b5cf55c606e65f2944d7', '1', '2022-02-09');
+(1, 'imrane', 'chaibi', 'imranchaibi1@gmail.com', '0632823950', '$2y$10$Mcm9e6Q/hbiO5enr47IMgeSKF03R87Ljdyxm20slOcPLoheqyrJf.', '5fb943ab2b34416fd5df62dac158d341', '1', '2022-02-04');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `course`
+-- Indexes for table `employee`
 --
-ALTER TABLE `course`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `payment_details`
---
-ALTER TABLE `payment_details`
+ALTER TABLE `employee`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `students`
+-- Indexes for table `payroll`
 --
-ALTER TABLE `students`
-  ADD PRIMARY KEY (`ID`);
+ALTER TABLE `payroll`
+  ADD PRIMARY KEY (`payrollID`),
+  ADD KEY `ID` (`ID`);
 
 --
 -- Indexes for table `users`
@@ -176,28 +128,32 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `course`
+-- AUTO_INCREMENT for table `employee`
 --
-ALTER TABLE `course`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+ALTER TABLE `employee`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `payment_details`
+-- AUTO_INCREMENT for table `payroll`
 --
-ALTER TABLE `payment_details`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `students`
---
-ALTER TABLE `students`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+ALTER TABLE `payroll`
+  MODIFY `payrollID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `payroll`
+--
+ALTER TABLE `payroll`
+  ADD CONSTRAINT `payroll_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `employee` (`ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,9 +1,9 @@
 <?php
     include('config/db.php');
-    //if(!$_SESSION['login']){
-      //  header("location:index.php");
-       // die;
-    // }
+    if(!$_SESSION['login']){
+        header("location:index.php");
+        die;
+    }
         include './controllers/time.php';
 
 ?>
@@ -120,7 +120,16 @@
     <section class="home">
         <div class="text">Departement</div>
         <div class="container">
-         
+            <form action="">
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Example label</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Another label</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
+                </div>
+            </form>
         </div>
     </section>
 
